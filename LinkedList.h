@@ -3,11 +3,6 @@
 
 #include <assert.h>
 
-//TODO
-//Seperate list after removal of person in the middle
-
-//Check if the students's uni is suitable when pushing back
-
 struct Student {
 	std::string name;
 	std::string uni;
