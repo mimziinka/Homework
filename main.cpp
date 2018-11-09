@@ -30,10 +30,27 @@ int main() {
 	
 
 	while (getInput) {
-		std::cin.getline(input, 1000);
+		std::cin.getline(input, 1000, ' ');
 
 		if (strstr(input, "append"))  { 
-			size_t index;
+			size_t index, i = 0;
+			Student st;
+
+			while (*input != ' ') {
+				st.name[i++] = *input;
+				input++;
+			};
+
+			input++;
+			i = 0;
+
+			while (*input != ' ') {
+				st.uni[i++] = *input;
+				input++;
+			};
+
+			input++;
+			index = atoi(input);
 			// append Name Uni LineIndex
 		}
 
@@ -56,11 +73,17 @@ int main() {
 		}
 
 		else if (strstr(input, "remove")) {
-			char *name;
-			//seperate name from other
+			char *name = new char[50];
+			size_t index, i = 0;
 
-			size_t index;
 			input += 6;
+
+			while (*input != ' ') {
+				name[i++] = *input;
+				input++;
+			};
+
+			input++;
 			index = atoi(input);
 
 			array[index].PopByName(name);
